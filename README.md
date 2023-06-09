@@ -55,24 +55,64 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+Step 1: Create module encoder and decoder.
+
+Step 2: Get inputs and outputs for encoders and decoders.
+
+Step 3: Perform "or" operation for encoder and "and" logic for decoders.
+
+Step 4: Perform RTL LOGIC and get waveform.
+
+Step-5: End the module.
+
+
 
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: harithashree.v
+RegisterNumber:  212222230046
 */
-
-
-
-
-
+## ENCODER:
+```python
+module encoder(x,y,z,d0,d1,d2,d3,d4,d5,d6,d7);
+output x,y,z;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(x,d4,d5,d6,d7);
+or(y,d2,d3,d6,d7);
+or(z,d1,d3,d5,d7);
+endmodule
+```
+## DE-CODER:
+```python
+module deco(x,y,z,d0,d1,d2,d3,d4,d5,d6,d7);
+input x,y,z;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+wire xbar,ybar,zbar;
+not (xb0ar,x);
+not (ybar,y);
+not (zbar,z);
+and (d0,xbar,ybar,zbar);
+and (d1,ybar,ybar,z);
+and (d2,zbar,y,zbar);
+and (d3,xbar,y,z);
+and (d4,x,ybar,zbar);
+and (d5,x,ybar,z);
+and (d6,x,y,zbar);
+and (d7,x,y,z);
+endmodule
+```
 
 ### RTL LOGIC  
 
+## ENCODER:
+![Screenshot 2023-06-09 204348](https://github.com/haritha-venkat/Experiment-08-Encoders-and-decoders-/assets/121285701/7a1863d3-e8d4-4142-83dc-97d8fcfdeb1a)
+
+## DE-CODER:
+
+![Screenshot 2023-06-09 204424](https://github.com/haritha-venkat/Experiment-08-Encoders-and-decoders-/assets/121285701/2db50a7e-0e34-4ff6-b96b-32007ffa30c2)
 
 
 
@@ -82,15 +122,28 @@ RegisterNumber:
 
 ### TIMING DIGRAMS  
 
+## ENCODER:
+
+![Screenshot 2023-06-09 204452](https://github.com/haritha-venkat/Experiment-08-Encoders-and-decoders-/assets/121285701/49d7d2e7-ff72-4d38-b7dc-3c7b04c17a88)
+
+## DE-CODER:
+
+![Screenshot 2023-06-09 204523](https://github.com/haritha-venkat/Experiment-08-Encoders-and-decoders-/assets/121285701/47eb7b30-4bdb-4475-9df1-d3b2b32b1f17)
 
 
 
 
 ### TRUTH TABLE 
 
+## ENCODER:
+
+![Screenshot 2023-06-09 204601](https://github.com/haritha-venkat/Experiment-08-Encoders-and-decoders-/assets/121285701/69170de3-1efa-450c-8208-b802f7adaa64)
+
+## DE-CODER:
+
+![Screenshot 2023-06-09 204628](https://github.com/haritha-venkat/Experiment-08-Encoders-and-decoders-/assets/121285701/96c26f0a-dadb-4140-a5f2-3ebd8b6902a4)
+
+### RESULTS :
+Thus the program to desing encoder and decoder is done.
 
 
-
-
-
-### RESULTS 
